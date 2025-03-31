@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            let inputField = document.getElementById("textInput").value;
+            let regex = /^[a-zA-Z, ]+$/;
+            if (!regex.test(inputField)) {
+                alert("Only letters and commas are allowed!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Comma Separated Values</h2>
+    <form action="process.py" method="post" onsubmit="return validateForm()">
+        <input type="text" id="textInput" name="textInput" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
